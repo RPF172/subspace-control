@@ -47,17 +47,15 @@ const Index = () => {
             {/* Left - Copy */}
             <div className="text-left">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-foreground leading-[1.1] mb-6">
-                Built for power.
-                <br />
-                <span className="text-foreground-secondary">Designed with restraint.</span>
+                A modern social platform for power-exchange communities.
               </h1>
               
               <p className="text-lg text-foreground-secondary leading-relaxed mb-4 max-w-xl">
-                SubSpace is a modern social platform for power-exchange communities — combining community, monetization, and privacy with real UX standards.
+                SubSpace brings community, privacy, and monetization into a single, intentional platform — built with modern UX standards and real infrastructure.
               </p>
               
               <p className="text-sm text-foreground-muted mb-8 max-w-lg">
-                What if FetLife, OnlyFans, and X had a baby — but the baby actually had taste, security, and UX standards?
+                Designed for people who want clarity, control, and credibility — not chaos.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -83,10 +81,12 @@ const Index = () => {
       <SectionDivider />
       <section className="py-16 px-6">
         <div className="container mx-auto max-w-2xl text-center">
-          <p className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-8">
-            Most platforms weren't built for this community.
-            <br />
-            <span className="text-foreground-secondary">SubSpace was.</span>
+          <h2 className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-4">
+            Built intentionally. Not retrofitted.
+          </h2>
+          <p className="text-foreground-secondary leading-relaxed mb-8 max-w-xl mx-auto">
+            Most platforms in this space were never designed for the realities of power-exchange communities.
+            SubSpace was built from the ground up to support identity, boundaries, and access — without outdated interfaces or improvised workflows.
           </p>
           
           <div className="flex items-center justify-center gap-8">
@@ -119,25 +119,26 @@ const Index = () => {
             {/* Right - Copy */}
             <div className="order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-6">
-                Community without chaos
+                Community without disorder.
               </h2>
               
               <p className="text-foreground-secondary leading-relaxed mb-6">
-                SubSpace gives you the depth of real communities without outdated forums, cluttered profiles, or unreadable feeds. Everything is structured, intentional, and built to scale.
+                SubSpace supports real communities without relying on cluttered forums or unreadable feeds.
+                Content is structured, discoverable, and designed to scale — so conversation stays usable as communities grow.
               </p>
               
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-foreground-secondary">
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
-                  Clean, readable feeds
+                  Structured feeds and discussions
                 </li>
                 <li className="flex items-center gap-3 text-foreground-secondary">
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
-                  Real groups and discussions
+                  Groups with clear visibility rules
                 </li>
                 <li className="flex items-center gap-3 text-foreground-secondary">
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
-                  Identity clarity without noise
+                  Identity surfaced without noise
                 </li>
               </ul>
             </div>
@@ -149,11 +150,12 @@ const Index = () => {
       <section className="py-20 px-6 bg-background-surface">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-4">
-            Profiles built for clarity, not performance
+            Profiles designed for clarity and control.
           </h2>
           
           <p className="text-foreground-secondary leading-relaxed mb-8 max-w-xl mx-auto">
-            Profiles on SubSpace aren't vanity pages. They're control panels.
+            Profiles on SubSpace are built to communicate expectations, not perform for attention.
+            Identity, interests, and boundaries are clearly structured, with sensitive information hidden by default.
           </p>
           
           <div className="flex justify-center mb-10">
@@ -163,19 +165,15 @@ const Index = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">
             <div className="p-4 rounded-xl bg-card border border-border text-left">
               <div className="text-sm font-medium text-foreground mb-1">Role-aware identity</div>
-              <div className="text-xs text-foreground-muted">Express who you are</div>
             </div>
             <div className="p-4 rounded-xl bg-card border border-border text-left">
-              <div className="text-sm font-medium text-foreground mb-1">Structured interests</div>
-              <div className="text-xs text-foreground-muted">Preferences organized</div>
+              <div className="text-sm font-medium text-foreground mb-1">Structured interests and preferences</div>
             </div>
             <div className="p-4 rounded-xl bg-card border border-border text-left">
-              <div className="text-sm font-medium text-foreground mb-1">Collapsed sections</div>
-              <div className="text-xs text-foreground-muted">Sensitive info protected</div>
+              <div className="text-sm font-medium text-foreground mb-1">Collapsed sections for sensitive information</div>
             </div>
             <div className="p-4 rounded-xl bg-card border border-border text-left">
-              <div className="text-sm font-medium text-foreground mb-1">Access controls</div>
-              <div className="text-xs text-foreground-muted">Clear visibility rules</div>
+              <div className="text-sm font-medium text-foreground mb-1">Explicit visibility and access controls</div>
             </div>
           </div>
         </div>
@@ -188,29 +186,26 @@ const Index = () => {
             {/* Left - Copy */}
             <div>
               <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-6">
-                Discovery without the gamble
+                Discovery with intent.
               </h2>
               
               <p className="text-foreground-secondary leading-relaxed mb-6">
-                Finding people on SubSpace is deliberate, not random. Search and filters come first — so intent is always clear.
+                Finding people on SubSpace is deliberate.
+                Search and filters come first, so users understand context, expectations, and boundaries before engaging.
               </p>
               
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-foreground-secondary">
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
-                  Search-first layout
+                  Search-first experience
                 </li>
                 <li className="flex items-center gap-3 text-foreground-secondary">
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
-                  Role-aware filters
+                  Role and preference-based filtering
                 </li>
                 <li className="flex items-center gap-3 text-foreground-secondary">
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
-                  Interest-based discovery
-                </li>
-                <li className="flex items-center gap-3 text-foreground-secondary">
-                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
-                  No swipe mechanics
+                  No swipe mechanics or random exposure
                 </li>
               </ul>
             </div>
@@ -235,11 +230,12 @@ const Index = () => {
             {/* Right - Copy */}
             <div className="order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-6">
-                Private by default
+                Private by default.
               </h2>
               
               <p className="text-foreground-secondary leading-relaxed mb-6">
-                Messaging on SubSpace respects consent and control. Every interaction is intentional.
+                Messaging on SubSpace is permission-based and explicit.
+                Unsolicited access is prevented, and system states are always clear.
               </p>
               
               <ul className="space-y-3">
@@ -253,7 +249,7 @@ const Index = () => {
                 </li>
                 <li className="flex items-center gap-3 text-foreground-secondary">
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
-                  Block, mute, and visibility controls
+                  Built-in block and visibility controls
                 </li>
               </ul>
             </div>
@@ -268,11 +264,12 @@ const Index = () => {
             {/* Left - Copy */}
             <div>
               <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-6">
-                Monetization without embarrassment
+                Monetization treated as infrastructure.
               </h2>
               
               <p className="text-foreground-secondary leading-relaxed mb-6">
-                SubSpace treats monetization as infrastructure — not a workaround.
+                SubSpace integrates monetization directly into the platform — without external workarounds or improvised tooling.
+                Access, content, and transactions are handled transparently and professionally.
               </p>
               
               <ul className="space-y-3">
@@ -282,11 +279,11 @@ const Index = () => {
                 </li>
                 <li className="flex items-center gap-3 text-foreground-secondary">
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
-                  Content gating done cleanly
+                  Structured content gating
                 </li>
                 <li className="flex items-center gap-3 text-foreground-secondary">
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
-                  Transparent wallet and transaction history
+                  Clear transaction history
                 </li>
                 <li className="flex items-center gap-3 text-foreground-secondary">
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
@@ -307,11 +304,12 @@ const Index = () => {
       <section className="py-20 px-6 bg-background-surface">
         <div className="container mx-auto max-w-2xl text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-4">
-            Built to be trusted
+            Built to be trusted.
           </h2>
           
           <p className="text-foreground-secondary leading-relaxed mb-8">
-            Privacy and security aren't add-ons. They're part of the foundation.
+            Privacy and security are core requirements, not optional features.
+            SubSpace is designed with modern authentication, conservative defaults, and infrastructure intended to scale responsibly.
           </p>
           
           <ul className="space-y-3 text-left max-w-md mx-auto mb-10">
@@ -345,11 +343,12 @@ const Index = () => {
       <section className="py-24 px-6">
         <div className="container mx-auto max-w-2xl text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-4">
-            This isn't for everyone.
+            This platform is intentionally limited.
           </h2>
           
           <p className="text-foreground-secondary leading-relaxed mb-8">
-            SubSpace is invite-only while we build carefully. If this resonates, you can request access.
+            SubSpace is invite-only while the platform is built carefully.
+            Access is reviewed to maintain quality, safety, and trust.
           </p>
           
           <Button size="lg" className="group mb-6">
@@ -374,7 +373,7 @@ const Index = () => {
               <a href="#" className="text-sm text-foreground-muted hover:text-foreground transition-colors">Contact</a>
             </div>
             <p className="text-sm text-foreground-muted">
-              © SubSpace
+              A modern social platform built with restraint. © SubSpace
             </p>
           </div>
         </div>
