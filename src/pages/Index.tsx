@@ -36,14 +36,14 @@ const Index = () => {
       </header>
 
       {/* SECTION 1 — HERO */}
-      <section className="pt-24 pb-20 px-6 relative overflow-hidden">
+      <section className="pt-28 pb-24 lg:pb-32 px-6 relative overflow-hidden">
         {/* Subtle noise texture overlay */}
-        <div className="absolute inset-0 opacity-[0.015] pointer-events-none" 
+        <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")` }} 
         />
         
         <div className="container mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left - Copy */}
             <div className="text-left">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-foreground leading-[1.1] mb-6">
@@ -54,12 +54,12 @@ const Index = () => {
                 SubSpace brings community, privacy, and monetization into a single, intentional platform — built with modern UX standards and real infrastructure.
               </p>
               
-              <p className="text-sm text-foreground-muted mb-8 max-w-lg">
+              <p className="text-sm text-foreground-muted mb-10 max-w-lg">
                 Designed for people who want clarity, control, and credibility — not chaos.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="group">
+                <Button size="lg" variant="accent" className="group">
                   Request Access
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
@@ -78,39 +78,45 @@ const Index = () => {
       </section>
 
       {/* SECTION 2 — POSITIONING STRIP */}
-      <SectionDivider />
-      <section className="py-16 px-6">
+      <SectionDivider variant="sigil" />
+      <section className="py-20 px-6">
         <div className="container mx-auto max-w-2xl text-center">
           <h2 className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-4">
             Built intentionally. Not retrofitted.
           </h2>
-          <p className="text-foreground-secondary leading-relaxed mb-8 max-w-xl mx-auto">
+          <p className="text-foreground-secondary leading-relaxed mb-10 max-w-xl mx-auto">
             Most platforms in this space were never designed for the realities of power-exchange communities.
             SubSpace was built from the ground up to support identity, boundaries, and access — without outdated interfaces or improvised workflows.
           </p>
           
-          <div className="flex items-center justify-center gap-8">
-            <div className="flex flex-col items-center gap-2">
-              <Users className="w-5 h-5 text-foreground-muted" />
+          <div className="flex items-center justify-center gap-12">
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-background-elevated border border-border flex items-center justify-center">
+                <Users className="w-5 h-5 text-foreground-muted" />
+              </div>
               <span className="text-xs text-foreground-muted">Community</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
-              <Shield className="w-5 h-5 text-foreground-muted" />
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-background-elevated border border-border flex items-center justify-center">
+                <Shield className="w-5 h-5 text-foreground-muted" />
+              </div>
               <span className="text-xs text-foreground-muted">Control</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
-              <Award className="w-5 h-5 text-foreground-muted" />
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-background-elevated border border-border flex items-center justify-center">
+                <Award className="w-5 h-5 text-foreground-muted" />
+              </div>
               <span className="text-xs text-foreground-muted">Credibility</span>
             </div>
           </div>
         </div>
       </section>
-      <SectionDivider />
+      <SectionDivider variant="line" />
 
       {/* SECTION 3 — FEATURE: COMMUNITY */}
-      <section className="py-20 px-6">
+      <section className="py-24 lg:py-32 px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left - UI Mock */}
             <div className="flex justify-center lg:justify-start order-2 lg:order-1">
               <UIMockFeed />
@@ -122,12 +128,12 @@ const Index = () => {
                 Community without disorder.
               </h2>
               
-              <p className="text-foreground-secondary leading-relaxed mb-6">
+              <p className="text-foreground-secondary leading-relaxed mb-8">
                 SubSpace supports real communities without relying on cluttered forums or unreadable feeds.
                 Content is structured, discoverable, and designed to scale — so conversation stays usable as communities grow.
               </p>
               
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 <li className="flex items-center gap-3 text-foreground-secondary">
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
                   Structured feeds and discussions
@@ -147,54 +153,71 @@ const Index = () => {
       </section>
 
       {/* SECTION 4 — FEATURE: PROFILES */}
-      <section className="py-20 px-6 bg-background-surface">
-        <div className="container mx-auto max-w-4xl text-center">
+      <SectionDivider variant="space" />
+      <section className="py-24 lg:py-32 px-6 bg-background-surface">
+        <div className="container mx-auto max-w-5xl text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-4">
             Profiles designed for clarity and control.
           </h2>
           
-          <p className="text-foreground-secondary leading-relaxed mb-8 max-w-xl mx-auto">
+          <p className="text-foreground-secondary leading-relaxed mb-12 max-w-xl mx-auto">
             Profiles on SubSpace are built to communicate expectations, not perform for attention.
             Identity, interests, and boundaries are clearly structured, with sensitive information hidden by default.
           </p>
           
-          <div className="flex justify-center mb-10">
-            <UIMockProfile />
+          <div className="flex justify-center mb-12">
+            <div className="relative">
+              <UIMockProfile />
+              {/* Callout annotations */}
+              <div className="hidden lg:flex absolute -right-32 top-1/3 items-center gap-2">
+                <div className="w-8 h-px bg-border" />
+                <div className="px-2 py-1 rounded bg-background-elevated border border-border text-[10px] text-foreground-muted whitespace-nowrap">
+                  Collapsed by default
+                </div>
+              </div>
+              <div className="hidden lg:flex absolute -left-28 bottom-1/4 items-center gap-2">
+                <div className="px-2 py-1 rounded bg-background-elevated border border-border text-[10px] text-foreground-muted whitespace-nowrap">
+                  Access controls
+                </div>
+                <div className="w-8 h-px bg-border" />
+              </div>
+            </div>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            <div className="p-4 rounded-xl bg-card border border-border text-left">
-              <div className="text-sm font-medium text-foreground mb-1">Role-aware identity</div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            <div className="p-5 rounded-xl bg-card border border-border text-left">
+              <div className="text-sm font-medium text-foreground">Role-aware identity</div>
             </div>
-            <div className="p-4 rounded-xl bg-card border border-border text-left">
-              <div className="text-sm font-medium text-foreground mb-1">Structured interests and preferences</div>
+            <div className="p-5 rounded-xl bg-card border border-border text-left">
+              <div className="text-sm font-medium text-foreground">Structured interests and preferences</div>
             </div>
-            <div className="p-4 rounded-xl bg-card border border-border text-left">
-              <div className="text-sm font-medium text-foreground mb-1">Collapsed sections for sensitive information</div>
+            <div className="p-5 rounded-xl bg-card border border-border text-left">
+              <div className="text-sm font-medium text-foreground">Collapsed sections for sensitive information</div>
             </div>
-            <div className="p-4 rounded-xl bg-card border border-border text-left">
-              <div className="text-sm font-medium text-foreground mb-1">Explicit visibility and access controls</div>
+            <div className="p-5 rounded-xl bg-card border border-border text-left">
+              <div className="text-sm font-medium text-foreground">Explicit visibility and access controls</div>
             </div>
           </div>
         </div>
       </section>
+      <SectionDivider variant="space" />
 
       {/* SECTION 5 — FEATURE: DISCOVERY */}
-      <section className="py-20 px-6">
+      <section className="py-24 lg:py-32 px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left - Copy */}
             <div>
               <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-6">
                 Discovery with intent.
               </h2>
               
-              <p className="text-foreground-secondary leading-relaxed mb-6">
+              <p className="text-foreground-secondary leading-relaxed mb-8">
                 Finding people on SubSpace is deliberate.
                 Search and filters come first, so users understand context, expectations, and boundaries before engaging.
               </p>
               
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 <li className="flex items-center gap-3 text-foreground-secondary">
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
                   Search-first experience
@@ -219,9 +242,10 @@ const Index = () => {
       </section>
 
       {/* SECTION 6 — FEATURE: MESSAGING */}
-      <section className="py-20 px-6 bg-background-surface">
+      <SectionDivider variant="line" />
+      <section className="py-24 lg:py-32 px-6 bg-background-surface">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left - UI Mock */}
             <div className="flex justify-center lg:justify-start order-2 lg:order-1">
               <UIMockMessaging />
@@ -233,12 +257,12 @@ const Index = () => {
                 Private by default.
               </h2>
               
-              <p className="text-foreground-secondary leading-relaxed mb-6">
+              <p className="text-foreground-secondary leading-relaxed mb-8">
                 Messaging on SubSpace is permission-based and explicit.
                 Unsolicited access is prevented, and system states are always clear.
               </p>
               
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 <li className="flex items-center gap-3 text-foreground-secondary">
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
                   Request-based messaging
@@ -258,21 +282,22 @@ const Index = () => {
       </section>
 
       {/* SECTION 7 — FEATURE: MONETIZATION */}
-      <section className="py-20 px-6">
+      <SectionDivider variant="sigil" />
+      <section className="py-24 lg:py-32 px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left - Copy */}
             <div>
               <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-6">
                 Monetization treated as infrastructure.
               </h2>
               
-              <p className="text-foreground-secondary leading-relaxed mb-6">
+              <p className="text-foreground-secondary leading-relaxed mb-8">
                 SubSpace integrates monetization directly into the platform — without external workarounds or improvised tooling.
                 Access, content, and transactions are handled transparently and professionally.
               </p>
               
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 <li className="flex items-center gap-3 text-foreground-secondary">
                   <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
                   Subscriptions and paid access
@@ -301,18 +326,30 @@ const Index = () => {
       </section>
 
       {/* SECTION 8 — SECURITY & TRUST */}
-      <section className="py-20 px-6 bg-background-surface">
+      <section className="py-28 lg:py-36 px-6">
         <div className="container mx-auto max-w-2xl text-center">
+          <div className="flex items-center justify-center gap-10 mb-10">
+            <div className="w-12 h-12 rounded-xl bg-background-elevated border border-border flex items-center justify-center">
+              <Lock className="w-5 h-5 text-foreground-muted" />
+            </div>
+            <div className="w-12 h-12 rounded-xl bg-background-elevated border border-border flex items-center justify-center">
+              <Shield className="w-5 h-5 text-foreground-muted" />
+            </div>
+            <div className="w-12 h-12 rounded-xl bg-background-elevated border border-border flex items-center justify-center">
+              <ShieldCheck className="w-5 h-5 text-foreground-muted" />
+            </div>
+          </div>
+          
           <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-4">
             Built to be trusted.
           </h2>
           
-          <p className="text-foreground-secondary leading-relaxed mb-8">
+          <p className="text-foreground-secondary leading-relaxed mb-10 max-w-lg mx-auto">
             Privacy and security are core requirements, not optional features.
             SubSpace is designed with modern authentication, conservative defaults, and infrastructure intended to scale responsibly.
           </p>
           
-          <ul className="space-y-3 text-left max-w-md mx-auto mb-10">
+          <ul className="space-y-4 text-left max-w-md mx-auto">
             <li className="flex items-center gap-3 text-foreground-secondary">
               <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
               Modern authentication
@@ -330,28 +367,25 @@ const Index = () => {
               Scalable infrastructure
             </li>
           </ul>
-          
-          <div className="flex items-center justify-center gap-8">
-            <Lock className="w-6 h-6 text-foreground-muted" />
-            <Shield className="w-6 h-6 text-foreground-muted" />
-            <ShieldCheck className="w-6 h-6 text-foreground-muted" />
-          </div>
         </div>
       </section>
 
       {/* SECTION 9 — FINAL CTA */}
-      <section className="py-24 px-6">
-        <div className="container mx-auto max-w-2xl text-center">
+      <section className="py-28 lg:py-36 px-6 bg-[hsl(220,18%,5%)] relative">
+        {/* Subtle vignette */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background opacity-50 pointer-events-none" />
+        
+        <div className="container mx-auto max-w-2xl text-center relative">
           <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-4">
             This platform is intentionally limited.
           </h2>
           
-          <p className="text-foreground-secondary leading-relaxed mb-8">
+          <p className="text-foreground-secondary leading-relaxed mb-10">
             SubSpace is invite-only while the platform is built carefully.
             Access is reviewed to maintain quality, safety, and trust.
           </p>
           
-          <Button size="lg" className="group mb-6">
+          <Button size="lg" variant="accent" className="group mb-8">
             Request Access
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Button>
