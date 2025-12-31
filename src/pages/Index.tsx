@@ -1,15 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
-import { FeatureCard } from "@/components/FeatureCard";
-import { ValuePill } from "@/components/ValuePill";
+import { SectionDivider } from "@/components/SectionDivider";
+import { UIMockDashboard } from "@/components/ui-mocks/UIMockDashboard";
+import { UIMockFeed } from "@/components/ui-mocks/UIMockFeed";
+import { UIMockProfile } from "@/components/ui-mocks/UIMockProfile";
+import { UIMockExplore } from "@/components/ui-mocks/UIMockExplore";
+import { UIMockMessaging } from "@/components/ui-mocks/UIMockMessaging";
+import { UIMockWallet } from "@/components/ui-mocks/UIMockWallet";
 import { 
-  Shield, 
-  Lock, 
   Users, 
-  Wallet, 
-  Eye, 
-  MessageSquare,
-  ArrowRight 
+  Shield, 
+  Award,
+  Lock,
+  ShieldCheck,
+  CheckCircle,
+  ArrowRight
 } from "lucide-react";
 
 const Index = () => {
@@ -19,14 +24,6 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <Logo size="sm" />
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm text-foreground-secondary hover:text-foreground transition-colors">
-              Features
-            </a>
-            <a href="#values" className="text-sm text-foreground-secondary hover:text-foreground transition-colors">
-              Values
-            </a>
-          </nav>
           <div className="flex items-center gap-3">
             <Button variant="ghost" size="sm">
               Sign in
@@ -38,170 +35,348 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="pt-32 pb-24 px-6">
-        <div className="container mx-auto max-w-4xl text-center">
-          <div 
-            className="opacity-0 animate-fade-in"
-            style={{ animationDelay: "0ms" }}
-          >
-            <ValuePill>Privacy-first social platform</ValuePill>
-          </div>
-          
-          <h1 
-            className="mt-8 text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-foreground leading-tight opacity-0 animate-fade-in"
-            style={{ animationDelay: "100ms" }}
-          >
-            Built for communities
-            <br />
-            <span className="text-accent">that demand discretion</span>
-          </h1>
-          
-          <p 
-            className="mt-6 text-lg text-foreground-secondary max-w-2xl mx-auto leading-relaxed opacity-0 animate-fade-in"
-            style={{ animationDelay: "200ms" }}
-          >
-            A modern social platform for power-exchange communities. Real privacy. 
-            Real monetization. Software that treats you like an adult.
-          </p>
-          
-          <div 
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-in"
-            style={{ animationDelay: "300ms" }}
-          >
-            <Button size="lg" className="group">
-              Request Access
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="secondary" size="lg">
-              Learn More
-            </Button>
+      {/* SECTION 1 — HERO */}
+      <section className="pt-24 pb-20 px-6 relative overflow-hidden">
+        {/* Subtle noise texture overlay */}
+        <div className="absolute inset-0 opacity-[0.015] pointer-events-none" 
+          style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")` }} 
+        />
+        
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left - Copy */}
+            <div className="text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-foreground leading-[1.1] mb-6">
+                Built for power.
+                <br />
+                <span className="text-foreground-secondary">Designed with restraint.</span>
+              </h1>
+              
+              <p className="text-lg text-foreground-secondary leading-relaxed mb-4 max-w-xl">
+                SubSpace is a modern social platform for power-exchange communities — combining community, monetization, and privacy with real UX standards.
+              </p>
+              
+              <p className="text-sm text-foreground-muted mb-8 max-w-lg">
+                What if FetLife, OnlyFans, and X had a baby — but the baby actually had taste, security, and UX standards?
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="group">
+                  Request Access
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+                <Button variant="outline" size="lg">
+                  Explore the platform
+                </Button>
+              </div>
+            </div>
+
+            {/* Right - UI Mock */}
+            <div className="flex justify-center lg:justify-end">
+              <UIMockDashboard />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section id="features" className="py-24 px-6 bg-background-surface border-y border-border">
-        <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground">
-              Infrastructure, not gimmicks
-            </h2>
-            <p className="mt-4 text-foreground-secondary max-w-xl mx-auto">
-              Every feature exists because it solves a real problem for real communities.
+      {/* SECTION 2 — POSITIONING STRIP */}
+      <SectionDivider />
+      <section className="py-16 px-6">
+        <div className="container mx-auto max-w-2xl text-center">
+          <p className="text-xl md:text-2xl font-serif text-foreground leading-relaxed mb-8">
+            Most platforms weren't built for this community.
+            <br />
+            <span className="text-foreground-secondary">SubSpace was.</span>
+          </p>
+          
+          <div className="flex items-center justify-center gap-8">
+            <div className="flex flex-col items-center gap-2">
+              <Users className="w-5 h-5 text-foreground-muted" />
+              <span className="text-xs text-foreground-muted">Community</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <Shield className="w-5 h-5 text-foreground-muted" />
+              <span className="text-xs text-foreground-muted">Control</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <Award className="w-5 h-5 text-foreground-muted" />
+              <span className="text-xs text-foreground-muted">Credibility</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <SectionDivider />
+
+      {/* SECTION 3 — FEATURE: COMMUNITY */}
+      <section className="py-20 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left - UI Mock */}
+            <div className="flex justify-center lg:justify-start order-2 lg:order-1">
+              <UIMockFeed />
+            </div>
+
+            {/* Right - Copy */}
+            <div className="order-1 lg:order-2">
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-6">
+                Community without chaos
+              </h2>
+              
+              <p className="text-foreground-secondary leading-relaxed mb-6">
+                SubSpace gives you the depth of real communities without outdated forums, cluttered profiles, or unreadable feeds. Everything is structured, intentional, and built to scale.
+              </p>
+              
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-foreground-secondary">
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                  Clean, readable feeds
+                </li>
+                <li className="flex items-center gap-3 text-foreground-secondary">
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                  Real groups and discussions
+                </li>
+                <li className="flex items-center gap-3 text-foreground-secondary">
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                  Identity clarity without noise
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4 — FEATURE: PROFILES */}
+      <section className="py-20 px-6 bg-background-surface">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-4">
+            Profiles built for clarity, not performance
+          </h2>
+          
+          <p className="text-foreground-secondary leading-relaxed mb-8 max-w-xl mx-auto">
+            Profiles on SubSpace aren't vanity pages. They're control panels.
+          </p>
+          
+          <div className="flex justify-center mb-10">
+            <UIMockProfile />
+          </div>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">
+            <div className="p-4 rounded-xl bg-card border border-border text-left">
+              <div className="text-sm font-medium text-foreground mb-1">Role-aware identity</div>
+              <div className="text-xs text-foreground-muted">Express who you are</div>
+            </div>
+            <div className="p-4 rounded-xl bg-card border border-border text-left">
+              <div className="text-sm font-medium text-foreground mb-1">Structured interests</div>
+              <div className="text-xs text-foreground-muted">Preferences organized</div>
+            </div>
+            <div className="p-4 rounded-xl bg-card border border-border text-left">
+              <div className="text-sm font-medium text-foreground mb-1">Collapsed sections</div>
+              <div className="text-xs text-foreground-muted">Sensitive info protected</div>
+            </div>
+            <div className="p-4 rounded-xl bg-card border border-border text-left">
+              <div className="text-sm font-medium text-foreground mb-1">Access controls</div>
+              <div className="text-xs text-foreground-muted">Clear visibility rules</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5 — FEATURE: DISCOVERY */}
+      <section className="py-20 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left - Copy */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-6">
+                Discovery without the gamble
+              </h2>
+              
+              <p className="text-foreground-secondary leading-relaxed mb-6">
+                Finding people on SubSpace is deliberate, not random. Search and filters come first — so intent is always clear.
+              </p>
+              
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-foreground-secondary">
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                  Search-first layout
+                </li>
+                <li className="flex items-center gap-3 text-foreground-secondary">
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                  Role-aware filters
+                </li>
+                <li className="flex items-center gap-3 text-foreground-secondary">
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                  Interest-based discovery
+                </li>
+                <li className="flex items-center gap-3 text-foreground-secondary">
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                  No swipe mechanics
+                </li>
+              </ul>
+            </div>
+
+            {/* Right - UI Mock */}
+            <div className="flex justify-center lg:justify-end">
+              <UIMockExplore />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6 — FEATURE: MESSAGING */}
+      <section className="py-20 px-6 bg-background-surface">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left - UI Mock */}
+            <div className="flex justify-center lg:justify-start order-2 lg:order-1">
+              <UIMockMessaging />
+            </div>
+
+            {/* Right - Copy */}
+            <div className="order-1 lg:order-2">
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-6">
+                Private by default
+              </h2>
+              
+              <p className="text-foreground-secondary leading-relaxed mb-6">
+                Messaging on SubSpace respects consent and control. Every interaction is intentional.
+              </p>
+              
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-foreground-secondary">
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                  Request-based messaging
+                </li>
+                <li className="flex items-center gap-3 text-foreground-secondary">
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                  Clear system messages
+                </li>
+                <li className="flex items-center gap-3 text-foreground-secondary">
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                  Block, mute, and visibility controls
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 7 — FEATURE: MONETIZATION */}
+      <section className="py-20 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left - Copy */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-6">
+                Monetization without embarrassment
+              </h2>
+              
+              <p className="text-foreground-secondary leading-relaxed mb-6">
+                SubSpace treats monetization as infrastructure — not a workaround.
+              </p>
+              
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-foreground-secondary">
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                  Subscriptions and paid access
+                </li>
+                <li className="flex items-center gap-3 text-foreground-secondary">
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                  Content gating done cleanly
+                </li>
+                <li className="flex items-center gap-3 text-foreground-secondary">
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                  Transparent wallet and transaction history
+                </li>
+                <li className="flex items-center gap-3 text-foreground-secondary">
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+                  Stripe-compliant by design
+                </li>
+              </ul>
+            </div>
+
+            {/* Right - UI Mock */}
+            <div className="flex justify-center lg:justify-end">
+              <UIMockWallet />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 8 — SECURITY & TRUST */}
+      <section className="py-20 px-6 bg-background-surface">
+        <div className="container mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-4">
+            Built to be trusted
+          </h2>
+          
+          <p className="text-foreground-secondary leading-relaxed mb-8">
+            Privacy and security aren't add-ons. They're part of the foundation.
+          </p>
+          
+          <ul className="space-y-3 text-left max-w-md mx-auto mb-10">
+            <li className="flex items-center gap-3 text-foreground-secondary">
+              <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+              Modern authentication
+            </li>
+            <li className="flex items-center gap-3 text-foreground-secondary">
+              <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+              Optional two-factor security
+            </li>
+            <li className="flex items-center gap-3 text-foreground-secondary">
+              <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+              Clear data boundaries
+            </li>
+            <li className="flex items-center gap-3 text-foreground-secondary">
+              <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
+              Scalable infrastructure
+            </li>
+          </ul>
+          
+          <div className="flex items-center justify-center gap-8">
+            <Lock className="w-6 h-6 text-foreground-muted" />
+            <Shield className="w-6 h-6 text-foreground-muted" />
+            <ShieldCheck className="w-6 h-6 text-foreground-muted" />
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 9 — FINAL CTA */}
+      <section className="py-24 px-6">
+        <div className="container mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-4">
+            This isn't for everyone.
+          </h2>
+          
+          <p className="text-foreground-secondary leading-relaxed mb-8">
+            SubSpace is invite-only while we build carefully. If this resonates, you can request access.
+          </p>
+          
+          <Button size="lg" className="group mb-6">
+            Request Access
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </Button>
+          
+          <p className="text-sm text-foreground-muted">
+            No public feeds. No scraping. No noise.
+          </p>
+        </div>
+      </section>
+
+      {/* SECTION 10 — FOOTER */}
+      <footer className="py-8 px-6 border-t border-border">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-6">
+              <a href="#" className="text-sm text-foreground-muted hover:text-foreground transition-colors">About</a>
+              <a href="#" className="text-sm text-foreground-muted hover:text-foreground transition-colors">Privacy</a>
+              <a href="#" className="text-sm text-foreground-muted hover:text-foreground transition-colors">Terms</a>
+              <a href="#" className="text-sm text-foreground-muted hover:text-foreground transition-colors">Contact</a>
+            </div>
+            <p className="text-sm text-foreground-muted">
+              © SubSpace
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <FeatureCard
-              icon={Shield}
-              title="Privacy by Default"
-              description="Control over visibility, access, and interaction is central — not buried in settings."
-            />
-            <FeatureCard
-              icon={Lock}
-              title="Consent Infrastructure"
-              description="Consent encoded into flows, defaults, and affordances. Not just copy."
-            />
-            <FeatureCard
-              icon={Users}
-              title="Community Depth"
-              description="Groups, roles, and identity tools built for the nuances of power-exchange dynamics."
-            />
-            <FeatureCard
-              icon={Wallet}
-              title="Clean Monetization"
-              description="Creator tools without dark patterns. Money exists in the open, clearly."
-            />
-            <FeatureCard
-              icon={Eye}
-              title="Content Control"
-              description="Granular access controls for content. Lock, restrict, or open — your choice."
-            />
-            <FeatureCard
-              icon={MessageSquare}
-              title="Real Communication"
-              description="Messaging that respects boundaries. Request-based access, not open inboxes."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section id="values" className="py-24 px-6">
-        <div className="container mx-auto max-w-3xl">
-          <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground">
-              What we believe
-            </h2>
-          </div>
-
-          <div className="space-y-8">
-            {[
-              {
-                title: "Taste Over Titillation",
-                description: "Adult-aware, never juvenile. Restraint is a feature."
-              },
-              {
-                title: "Privacy Is Power",
-                description: "Control over your visibility, access, and interactions is fundamental."
-              },
-              {
-                title: "Consent Is Structural",
-                description: "Not copy. It's how the platform works at every level."
-              },
-              {
-                title: "Monetization Without Shame",
-                description: "Clear, honest, without deception or manipulation."
-              },
-              {
-                title: "Credibility at Scale",
-                description: "Every screen should feel believable at 10 users or 10 million."
-              }
-            ].map((value, index) => (
-              <div 
-                key={value.title}
-                className="flex gap-6 p-6 rounded-xl bg-card border border-border"
-              >
-                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-background-elevated flex items-center justify-center text-sm font-medium text-foreground-secondary">
-                  {index + 1}
-                </div>
-                <div>
-                  <h3 className="text-base font-medium text-foreground">{value.title}</h3>
-                  <p className="mt-1 text-sm text-foreground-secondary">{value.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 px-6 border-t border-border">
-        <div className="container mx-auto max-w-2xl text-center">
-          <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground">
-            Ready for something different?
-          </h2>
-          <p className="mt-4 text-foreground-secondary">
-            SubSpace is currently in private beta. Request access to join a platform 
-            that finally gets it right.
-          </p>
-          <div className="mt-8">
-            <Button size="lg" className="group">
-              Request Access
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-8 px-6 border-t border-border">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <Logo size="sm" />
-          <p className="text-sm text-foreground-muted">
-            © 2025 SubSpace. All rights reserved.
-          </p>
         </div>
       </footer>
     </div>
