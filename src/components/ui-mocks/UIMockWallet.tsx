@@ -58,13 +58,13 @@ export const UIMockWallet = () => {
               <div className="text-sm font-medium text-success">+$15.00</div>
             </div>
 
-            <div className="flex items-center gap-3 p-2.5 rounded-lg bg-background-elevated border border-border">
-              <div className="w-8 h-8 rounded-full bg-success/20 flex items-center justify-center">
+            <div className="flex items-center gap-3 p-2.5 rounded-lg bg-accent/5 border border-accent/20">
+              <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
                 <Lock className="w-4 h-4 text-accent" />
               </div>
               <div className="flex-1">
                 <div className="text-sm text-foreground">Vault unlock</div>
-                <div className="text-xs text-foreground-muted">Content access</div>
+                <div className="text-xs text-accent/70">Restricted access granted</div>
               </div>
               <div className="text-sm font-medium text-success">+$25.00</div>
             </div>
