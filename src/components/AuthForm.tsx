@@ -36,9 +36,6 @@ export const AuthForm = ({ onSuccess }: AuthFormProps) => {
     try {
       const { error } = await supabase.auth.signInWithOtp({
         email: result.data,
-        options: {
-          emailRedirectTo: `${window.location.origin}/`,
-        },
       });
 
       if (error) {
@@ -101,9 +98,6 @@ export const AuthForm = ({ onSuccess }: AuthFormProps) => {
     try {
       const { error } = await supabase.auth.signInWithOtp({
         email,
-        options: {
-          emailRedirectTo: `${window.location.origin}/`,
-        },
       });
 
       if (error) {
