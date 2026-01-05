@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
 import { SectionDivider } from "@/components/SectionDivider";
@@ -25,11 +26,11 @@ const Index = () => {
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <Logo size="sm" />
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm">
-              Sign in
+            <Button variant="ghost" size="sm" asChild>
+              <Link to="/auth">Sign in</Link>
             </Button>
-            <Button size="sm">
-              Request Access
+            <Button size="sm" asChild>
+              <Link to="/auth">Request Access</Link>
             </Button>
           </div>
         </div>
@@ -59,9 +60,11 @@ const Index = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" variant="accent" className="group">
-                  Request Access
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <Button size="lg" variant="accent" className="group" asChild>
+                  <Link to="/auth">
+                    Request Access
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </Button>
                 <Button variant="outline" size="lg">
                   Explore the platform
@@ -385,9 +388,11 @@ const Index = () => {
             Access is reviewed to maintain quality, safety, and trust.
           </p>
           
-          <Button size="lg" variant="accent" className="group mb-8">
-            Request Access
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          <Button size="lg" variant="accent" className="group mb-8" asChild>
+            <Link to="/auth">
+              Request Access
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Button>
           
           <p className="text-sm text-foreground-muted">
