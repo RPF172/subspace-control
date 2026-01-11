@@ -84,6 +84,11 @@ export const useOnboarding = () => {
   useEffect(() => {
     if (user) {
       fetchOnboardingState();
+    } else {
+      // Reset state when user logs out
+      setShowModal(false);
+      setShowReminder(false);
+      setLoading(false);
     }
   }, [user]);
 
@@ -127,9 +132,14 @@ export const useOnboarding = () => {
       const softLimits = limits?.filter(l => l.limit_type === 'soft').map(l => l.content) || [];
       const hardLimits = limits?.filter(l => l.limit_type === 'hard').map(l => l.content) || [];
 
+      const onboardingStep = profile.onboarding_step || 1;
+      const onboardingCompleted = profile.onboarding_completed || false;
+      const wasSkipped = !!profile.onboarding_skipped_at;
+      const isFirstLogin = onboardingStep === 1 && !wasSkipped && !onboardingCompleted;
+
       setData({
         avatar_url: profile.avatar_url,
-        avatar_skipped: !profile.avatar_url && (profile.onboarding_step || 1) > 1,
+        avatar_skipped: !profile.avatar_url && onboardingStep > 1,
         display_name: profile.display_name,
         role: profile.role as OnboardingData['role'],
         location: profile.location,
@@ -148,16 +158,22 @@ export const useOnboarding = () => {
         about: profile.about,
         questionnaire_responses: (questionnaire?.responses as Record<string, string>) || {},
         generated_about: questionnaire?.generated_about || null,
-        onboarding_step: profile.onboarding_step || 1,
-        onboarding_completed: profile.onboarding_completed || false,
+        onboarding_step: onboardingStep,
+        onboarding_completed: onboardingCompleted,
       });
 
-      setCurrentStep(profile.onboarding_step || 1);
+      setCurrentStep(onboardingStep);
 
-      // Show modal if not completed
-      if (!profile.onboarding_completed) {
-        setShowModal(true);
+      // Show modal only on first login (step 1, never skipped, never completed)
+      // For returning users who haven't completed, show the reminder instead
+      if (!onboardingCompleted) {
+        if (isFirstLogin) {
+          setShowModal(true);
+        }
         setShowReminder(true);
+      } else {
+        setShowModal(false);
+        setShowReminder(false);
       }
     } catch (error: any) {
       console.error('Error fetching onboarding state:', error.message);
