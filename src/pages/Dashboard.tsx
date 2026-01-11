@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
+import { OnboardingModal } from "@/components/onboarding";
 import {
   DashboardLayout,
   DashboardProfilePanel,
@@ -32,14 +33,17 @@ const Dashboard = () => {
   }
 
   return (
-    <DashboardLayout>
-      <DashboardProfilePanel />
-      <div className="grid md:grid-cols-2 gap-6">
-        <DashboardMessagesPanel />
-        <DashboardDiscoveryPanel />
-      </div>
-      <DashboardActivityPanel />
-    </DashboardLayout>
+    <>
+      <OnboardingModal />
+      <DashboardLayout>
+        <DashboardProfilePanel />
+        <div className="grid md:grid-cols-2 gap-6">
+          <DashboardMessagesPanel />
+          <DashboardDiscoveryPanel />
+        </div>
+        <DashboardActivityPanel />
+      </DashboardLayout>
+    </>
   );
 };
 

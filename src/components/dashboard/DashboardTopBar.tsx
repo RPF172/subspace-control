@@ -9,14 +9,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useAuth } from "@/hooks/useAuth";
 import { useProfile } from "@/hooks/useProfile";
-import { useOnboarding } from "@/hooks/useOnboarding";
+import { useOnboardingContext } from "@/components/onboarding/OnboardingProvider";
 import { OnboardingReminder } from "@/components/onboarding";
 import { useNavigate } from "react-router-dom";
 
 export const DashboardTopBar = () => {
   const { signOut } = useAuth();
   const { profile } = useProfile();
-  const { showReminder } = useOnboarding();
+  const { showReminder } = useOnboardingContext();
   const navigate = useNavigate();
 
   const hasUnreadNotifications = showReminder;
@@ -27,7 +27,7 @@ export const DashboardTopBar = () => {
   };
 
   return (
-    <header className="fixed top-0 right-0 left-16 h-14 bg-background/80 backdrop-blur-sm border-b border-border z-30">
+    <header className="fixed top-0 right-0 left-0 h-14 bg-background/80 backdrop-blur-sm border-b border-border z-30">
       <div className="h-full flex items-center justify-end px-6 gap-4">
         {/* Notification Icon */}
         <DropdownMenu>
