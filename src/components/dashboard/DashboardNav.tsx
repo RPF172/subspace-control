@@ -33,7 +33,7 @@ const NavItem = ({ icon: Icon, label, isActive, onClick }: NavItemProps) => (
         />
       </button>
     </TooltipTrigger>
-    <TooltipContent side="right" className="bg-popover border-border">
+    <TooltipContent side="top" className="bg-popover border-border">
       <p>{label}</p>
     </TooltipContent>
   </Tooltip>
@@ -51,16 +51,9 @@ export const DashboardNav = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="fixed left-0 top-0 bottom-0 w-16 bg-background-surface border-r border-border flex flex-col items-center py-6 z-40">
-      {/* Logo */}
-      <div className="mb-8">
-        <div className="w-8 h-8 rounded-lg bg-accent/20 flex items-center justify-center">
-          <span className="text-accent font-serif font-semibold text-sm">S</span>
-        </div>
-      </div>
-
-      {/* Main Nav Items */}
-      <div className="flex-1 flex flex-col items-center gap-2">
+    <nav className="fixed left-0 right-0 bottom-0 h-16 bg-background-surface border-t border-border flex items-center justify-center px-6 z-40">
+      {/* Nav Items */}
+      <div className="flex items-center gap-2">
         {navItems.map((item) => (
           <NavItem
             key={item.path}
@@ -71,10 +64,6 @@ export const DashboardNav = () => {
             onClick={() => navigate(item.path)}
           />
         ))}
-      </div>
-
-      {/* Settings at bottom */}
-      <div className="mt-auto">
         <NavItem
           icon={Settings}
           label="Settings"
