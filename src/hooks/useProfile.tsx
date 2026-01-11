@@ -8,6 +8,15 @@ export interface Profile {
   display_name: string | null;
   bio: string | null;
   avatar_url: string | null;
+  role: string | null;
+  location: string | null;
+  location_public: boolean | null;
+  age: number | null;
+  age_public: boolean | null;
+  about: string | null;
+  onboarding_step: number | null;
+  onboarding_completed: boolean | null;
+  onboarding_skipped_at: string | null;
   created_at: string;
   updated_at: string;
 }
